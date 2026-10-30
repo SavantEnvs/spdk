@@ -1,0 +1,10 @@
+# Fuzzes SPDK's json_decode_fuzzer (see mayhem/harnesses/json_decode_fuzzer.c) as an in-process libFuzzer target.
+project: savantenvs/spdk
+target: json_decode_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/json_decode_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/json_decode_fuzzer
+    libfuzzer: true
+    timeout: 10

@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","method":"bdev_get_bdevs","params":{"name":"Malloc0"},"id":"abc"}

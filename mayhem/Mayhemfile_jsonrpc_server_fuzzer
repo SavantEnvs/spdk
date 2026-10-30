@@ -1,0 +1,10 @@
+# Fuzzes SPDK's jsonrpc_server_fuzzer (see mayhem/harnesses/jsonrpc_server_fuzzer.c) as an in-process libFuzzer target.
+project: savantenvs/spdk
+target: jsonrpc_server_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/jsonrpc_server_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/jsonrpc_server_fuzzer
+    libfuzzer: true
+    timeout: 10
