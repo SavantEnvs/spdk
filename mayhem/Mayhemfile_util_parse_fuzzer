@@ -1,0 +1,10 @@
+# Fuzzes SPDK's util_parse_fuzzer (see mayhem/harnesses/util_parse_fuzzer.c) as an in-process libFuzzer target.
+project: savantenvs/spdk
+target: util_parse_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/util_parse_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/util_parse_fuzzer
+    libfuzzer: true
+    timeout: 10
